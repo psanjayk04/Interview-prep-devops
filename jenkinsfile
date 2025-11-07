@@ -27,11 +27,6 @@ pipeline{
                 sh 'ifconfig'
             }
         }
-        stage('Ip Address Details'){
-            steps {
-                sh 'hostname -I'
-            }
-        }
         stage("OS Details"){
             steps {
                 sh 'cat /etc/os-release'
