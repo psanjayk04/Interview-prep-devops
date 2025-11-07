@@ -22,6 +22,16 @@ pipeline{
                 sh 'df -h'
             }
         }
+        stage("Network Details"){
+            steps {
+                sh 'ifconfig'
+            }
+        }
+        stage('Ip Address Details'){
+            steps {
+                sh 'hostname -I'
+            }
+        }
         stage("OS Details"){
             steps {
                 sh 'cat /etc/os-release'
