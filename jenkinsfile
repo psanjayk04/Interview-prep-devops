@@ -1,0 +1,41 @@
+pipeline{
+    agent any
+
+    stages {
+        stage("Server Details"){
+            steps {
+                echo "Server Details"
+            }
+        }
+        stage("CPU Details"){
+            steps {
+                sh 'lscpu'
+            }
+        }
+        stage("Memory Details"){
+            steps {
+                sh 'free -h'
+            }
+        }
+        stage("Disk Details"){
+            steps {
+                sh 'df -h'
+            }
+        }
+        stage("Network Details"){
+            steps {
+                sh 'ifconfig'
+            }
+        }
+        stage('Ip Address Details'){
+            steps {
+                sh 'hostname -I'
+            }
+        }
+        stage("OS Details"){
+            steps {
+                sh 'cat /etc/os-release'
+            }
+        }
+    }
+}
